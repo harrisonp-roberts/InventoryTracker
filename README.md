@@ -12,3 +12,12 @@ that are used to directly query the database.
 The views (HTML) and their respective javascript are under src.main.resources.static.
 
 This project uses PostgreSQL as it's database. I'll upload schema information for that eventually.
+
+## Environment
+I'm using IntelliJ to develop this, so if you want to run the project from your IDE, you'll need that. Otherwise any editor
+(VSCode, Atom, etc.) should be good enough for poking around.
+
+I'm using Apache Maven as a build system, so if you want to be able to compile and run it without and IDE then you'll need that.
+
+## Running
+To run the 

@@ -790,7 +790,7 @@ false Zulu
       <ObjectId>16394</ObjectId>
       <Comment>Database for DnD Inventory Tracking System</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>511</IntrospectionStateNumber>
+      <IntrospectionStateNumber>514</IntrospectionStateNumber>
     </database>
     <database id="3" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
@@ -854,7 +854,7 @@ U/10
       <ObjectId>16395</ObjectId>
       <StateNumber>492</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>512</IntrospectionStateNumber>
+      <IntrospectionStateNumber>515</IntrospectionStateNumber>
     </schema>
     <schema id="17" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
@@ -1185,7 +1185,8 @@ item_name</ColNames>
     <column id="57" parent="48" name="name">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>500</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>513</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="58" parent="48" name="item_name_uindex">
@@ -1198,14 +1199,32 @@ item_name</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <column id="59" parent="49" name="username">
+    <index id="59" parent="48" name="item_pk">
+      <ObjectId>16431</ObjectId>
+      <StateNumber>513</StateNumber>
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>3126</ClassIds>
+    </index>
+    <key id="60" parent="48" name="item_pk">
+      <ObjectId>16432</ObjectId>
+      <StateNumber>513</StateNumber>
+      <ColNames>name</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>item_pk</UnderlyingIndexName>
+    </key>
+    <column id="61" parent="49" name="username">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>497</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="60" parent="49" name="users_pk">
+    <index id="62" parent="49" name="users_pk">
       <ObjectId>16403</ObjectId>
       <StateNumber>497</StateNumber>
       <ColNames>username</ColNames>
@@ -1216,7 +1235,7 @@ item_name</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <index id="61" parent="49" name="users_username_uindex">
+    <index id="63" parent="49" name="users_username_uindex">
       <ObjectId>16402</ObjectId>
       <StateNumber>496</StateNumber>
       <ColNames>username</ColNames>
@@ -1226,7 +1245,7 @@ item_name</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <key id="62" parent="49" name="users_pk">
+    <key id="64" parent="49" name="users_pk">
       <ObjectId>16404</ObjectId>
       <StateNumber>497</StateNumber>
       <ColNames>username</ColNames>

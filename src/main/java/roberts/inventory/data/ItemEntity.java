@@ -1,9 +1,6 @@
 package roberts.inventory.data;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -11,6 +8,8 @@ import java.util.Objects;
 public class ItemEntity {
     private String name;
 
+
+    @Id
     @Basic
     @Column(name = "name")
     public String getName() {
