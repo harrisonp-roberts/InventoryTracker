@@ -1,1 +1,9 @@
+roberts\inventory\data\InventoryItemEntityPK.class
+roberts\inventory\data\InventoryItemEntity.class
+roberts\inventory\business\services\UserService.class
 roberts\inventory\data\repositories\UserRepository.class
+roberts\inventory\data\UsersEntity.class
+roberts\inventory\data\ItemEntity.class
+roberts\inventory\business\configuration\CORSConfiguration.class
+roberts\inventory\InventoryApplication.class
+roberts\inventory\business\configuration\CORSConfiguration$1.class
