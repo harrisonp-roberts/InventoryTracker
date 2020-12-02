@@ -790,7 +790,7 @@ false Zulu
       <ObjectId>16394</ObjectId>
       <Comment>Database for DnD Inventory Tracking System</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>514</IntrospectionStateNumber>
+      <IntrospectionStateNumber>524</IntrospectionStateNumber>
     </database>
     <database id="3" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
@@ -854,7 +854,7 @@ U/10
       <ObjectId>16395</ObjectId>
       <StateNumber>492</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>515</IntrospectionStateNumber>
+      <IntrospectionStateNumber>525</IntrospectionStateNumber>
     </schema>
     <schema id="17" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
@@ -1115,10 +1115,10 @@ UC/10
       <Owner>postgres</Owner>
       <StateNumber>510</StateNumber>
     </table>
-    <table id="49" parent="16" name="users">
+    <table id="49" parent="16" name="user">
       <ObjectId>16396</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>507</StateNumber>
+      <StateNumber>523</StateNumber>
     </table>
     <column id="50" parent="47" name="username">
       <Position>1</Position>
@@ -1169,7 +1169,7 @@ item_name</ColNames>
       <ColNames>username</ColNames>
       <RefTableId>16396</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>users</RefTableName>
+      <RefTableName>user</RefTableName>
       <RefKeyName>users_pk</RefKeyName>
       <RefColNames>username</RefColNames>
     </foreign-key>
@@ -1224,7 +1224,28 @@ item_name</ColNames>
       <StateNumber>497</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="62" parent="49" name="users_pk">
+    <column id="62" parent="49" name="type">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>519</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="63" parent="49" name="password">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>522</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="64" parent="49" name="salt">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>523</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="65" parent="49" name="users_pk">
       <ObjectId>16403</ObjectId>
       <StateNumber>497</StateNumber>
       <ColNames>username</ColNames>
@@ -1235,7 +1256,7 @@ item_name</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <index id="63" parent="49" name="users_username_uindex">
+    <index id="66" parent="49" name="users_username_uindex">
       <ObjectId>16402</ObjectId>
       <StateNumber>496</StateNumber>
       <ColNames>username</ColNames>
@@ -1245,7 +1266,7 @@ item_name</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <key id="64" parent="49" name="users_pk">
+    <key id="67" parent="49" name="users_pk">
       <ObjectId>16404</ObjectId>
       <StateNumber>497</StateNumber>
       <ColNames>username</ColNames>

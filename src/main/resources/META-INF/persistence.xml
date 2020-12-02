@@ -8,6 +8,7 @@
       <class>roberts.inventory.data.InventoryItemEntity</class>
       <class>roberts.inventory.data.ItemEntity</class>
       <class>roberts.inventory.data.UsersEntity</class>
+      <class>roberts.inventory.data.UserEntity</class>
       <properties>
           <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
           <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>

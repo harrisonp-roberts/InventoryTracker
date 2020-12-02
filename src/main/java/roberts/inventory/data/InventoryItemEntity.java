@@ -27,6 +27,10 @@ public class InventoryItemEntity {
         return quantity;
     }
 
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
