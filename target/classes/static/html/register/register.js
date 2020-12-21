@@ -34,8 +34,11 @@ function register() {
         const entity = new UserEntity(un, p1, selectedType);
         const url = "http://localhost:8080/register";
 
-        let x = postData(url, entity);
-
-        console.log(x);
+        postData(url, entity)
+            .then(response => {
+                if(response.status === 200) {
+                    window.location.href = "http://localhost:8080/";
+                }
+            })
     }
 }

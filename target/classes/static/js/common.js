@@ -4,6 +4,7 @@ function postData(url, data) {
     return fetch(url, {
         method: "POST",
         headers: {
+          "Authorization": "TOKEN",
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data)

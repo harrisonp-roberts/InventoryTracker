@@ -10,6 +10,7 @@ public class UserEntity {
     private String type;
     private String password;
     private String salt;
+    private String token;
 
     @Id
     @Column(name = "username")
@@ -62,5 +63,15 @@ public class UserEntity {
     @Override
     public int hashCode() {
         return Objects.hash(username, type, password, salt);
+    }
+
+    @Basic
+    @Column(name = "token")
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

@@ -24,18 +24,16 @@ public class PasswordService {
         final var unauthorizedAccount = userRepo.getUserEntityByUsername(user.getUsername());
         final var salt = unauthorizedAccount.getSalt();
         var password = user.getPassword();
-
         password = password + salt;
+
         return hash(password);
     }
 
     UserEntity saltAndHash(UserEntity user) throws NoSuchAlgorithmException {
         var password = user.getPassword();
         final var salt = UUID.randomUUID().toString();
-        password = salt + password;
-
+        password = password + salt;
         password = hash(password);
-
         user.setPassword(password);
         user.setSalt(salt);
 
@@ -50,7 +48,7 @@ public class PasswordService {
      * @throws NoSuchAlgorithmException If hashing algorithm is incorrectly specified
      */
     private String hash(String toHash) throws NoSuchAlgorithmException {
-        //Class that ingests strings, and hashes them
+        // Class that ingests strings, and hashes them
         var digester = MessageDigest.getInstance("SHA-256");
         digester.update(toHash.getBytes());
         return new String(digester.digest());

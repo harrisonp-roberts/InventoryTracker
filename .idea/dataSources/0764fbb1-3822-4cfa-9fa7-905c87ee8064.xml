@@ -790,7 +790,7 @@ false Zulu
       <ObjectId>16394</ObjectId>
       <Comment>Database for DnD Inventory Tracking System</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>524</IntrospectionStateNumber>
+      <IntrospectionStateNumber>529</IntrospectionStateNumber>
     </database>
     <database id="3" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
@@ -854,7 +854,7 @@ U/10
       <ObjectId>16395</ObjectId>
       <StateNumber>492</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>525</IntrospectionStateNumber>
+      <IntrospectionStateNumber>528</IntrospectionStateNumber>
     </schema>
     <schema id="17" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
@@ -873,6 +873,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
+      <IntrospectionStateNumber>530</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="19" parent="2" name="plpgsql">
@@ -1118,7 +1119,7 @@ UC/10
     <table id="49" parent="16" name="user">
       <ObjectId>16396</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>523</StateNumber>
+      <StateNumber>526</StateNumber>
     </table>
     <column id="50" parent="47" name="username">
       <Position>1</Position>
@@ -1245,7 +1246,13 @@ item_name</ColNames>
       <StateNumber>523</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="65" parent="49" name="users_pk">
+    <column id="65" parent="49" name="token">
+      <Position>5</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>526</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="66" parent="49" name="users_pk">
       <ObjectId>16403</ObjectId>
       <StateNumber>497</StateNumber>
       <ColNames>username</ColNames>
@@ -1256,7 +1263,7 @@ item_name</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <index id="66" parent="49" name="users_username_uindex">
+    <index id="67" parent="49" name="users_username_uindex">
       <ObjectId>16402</ObjectId>
       <StateNumber>496</StateNumber>
       <ColNames>username</ColNames>
@@ -1266,7 +1273,7 @@ item_name</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <key id="67" parent="49" name="users_pk">
+    <key id="68" parent="49" name="users_pk">
       <ObjectId>16404</ObjectId>
       <StateNumber>497</StateNumber>
       <ColNames>username</ColNames>

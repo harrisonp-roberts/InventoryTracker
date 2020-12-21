@@ -36,49 +36,44 @@ public class UserService {
         final var doesExist = userRepo.existsByUsername(username);
 
         if (!doesExist) {
-            return ResponseEntity.status(200).body("{token: 'TOKEN'}");
-        } else {
             try {
                 user = passwordService.saltAndHash(user);
                 final var token = UUID.randomUUID().toString();
-                //user.setToken(token);
-
+                user.setToken(token);
                 userRepo.save(user);
-
-                //todo need to store the token on the server too, dumbass.
 
                 return ResponseEntity.ok(token);
             } catch (NoSuchAlgorithmException e) {
                 return ResponseEntity.status(500).body("An internal server error has occurred");
             }
+        } else {
+            return ResponseEntity.status(401).body("User Already Exists");
         }
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET, produces = "text/plain", consumes = "application/json")
+    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "text/plain", consumes = "application/json")
     public ResponseEntity<String> login(@RequestBody UserEntity user) {
         final var username = user.getUsername();
         final var exists = userRepo.existsByUsername(username);
 
         if(exists) {
-            final var token = UUID.randomUUID().toString();
-
             try {
                 user.setPassword(passwordService.getHashedPassword(user));
             } catch (NoSuchAlgorithmException e) {
-                return ResponseEntity.status(500).body("An internal server error occurred");
+                0return ResponseEntity.status(500).body("An internal server error occurred");
             }
 
-            final var authorizedUser = userRepo.findUserEntitiesByUsernameAndPassword(user.getUsername(), user.getPassword());
+            final var authorizedUser = userRepo.findUserEntityByUsernameAndPassword(user.getUsername(), user.getPassword());
 
             if(authorizedUser != null) {
-                //TODO authorizedUser.setToken();
+                final var token = UUID.randomUUID().toString();
+                authorizedUser.setToken(token);
                 userRepo.save(authorizedUser);
 
                 return ResponseEntity.ok(token);
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("INVALID CREDENTIALS");
             }
-
         } else {
             return ResponseEntity.status(401).body("A User with that username does not exist");
         }
